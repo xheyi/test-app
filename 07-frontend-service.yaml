@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  labels:
+    frontend.service: frontend
+spec:
+  type: NodePort
+  selector:
+    frontend.service: frontend
+  ports:
+  - port: 8082
+    targetPort: 8082
+    nodePort: 30080
+
